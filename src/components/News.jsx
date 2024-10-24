@@ -49,7 +49,7 @@ const News = (props) => {
   const fetchMoreData = async () => {
     try {
       const response = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${apiKey}&page=${page + 1}&pageSize=${props.pageSize}`
+        `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`
       );
       setArticles(articles.concat(response.data.articles)); // Append new data
       setPage(page + 1); // Increment page
