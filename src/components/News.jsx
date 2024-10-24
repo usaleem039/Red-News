@@ -16,7 +16,7 @@ const News = (props) => {
   const [error, setError] = useState(null); // State for error handling
   const [page, setPage] = useState(1); // State for pagination
 
-  const apiKey = "dce0d30e27334933b2cb3660e9095210";
+  
 
   // Format category name (capitalize first letter)
   const formatCategory = (category) => {
@@ -28,7 +28,7 @@ const News = (props) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${apiKey}&page=${page}&pageSize=${props.pageSize}`
+        `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`
       );
       setArticles(response.data.articles);
     } catch (error) {
